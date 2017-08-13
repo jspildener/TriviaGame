@@ -1,4 +1,3 @@
-<!-- Coin Flip HTML -->
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -20,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="mainButton col-md-5"></div>
-                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                <button id="startButton" type="button" class="btn btn-primary btn-lg">Large button</button>
             </div>
         </div>
         <div id="questionPage">
@@ -28,12 +27,14 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-1">
                         <div id="question1" class="questionGroup">
-                            <p>This is the first question</p>
-                            <input type="radio" name="answer1" value="correct">A
+                            <p>The following movies were partially filmed in Cleveland, except?</p>
+                            <input type="radio" name="answer1" value="wrong">A Christmas Story
                             <br>
-                            <input type="radio" name="answer1" value="wrong">B
+                            <input type="radio" name="answer1" value="wrong">The Avengers
                             <br>
-                            <input type="radio" name="answer1" value="wrong">C
+                            <input type="radio" name="answer1" value="wrong">Shawshank Redemption
+                            <br>
+                            <input type="radio" name="answer1" value="correct">Jurassic Park
                             <br>
                         </div>
                     </div>
@@ -41,12 +42,66 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-1">
                         <div id="question2" class="questionGroup">
-                            <p>This is the second question</p>
-                            <input type="radio" name="answer2" value="correct">A
+                            <p>Cleveland was the home to the first ever electric traffic light.</p>
+                            <input type="radio" name="answer2" value="correct">True
                             <br>
-                            <input type="radio" name="answer2" valus="wrong">B
+                            <input type="radio" name="answer2" value="wrong">False
                             <br>
-                            <input type="radio" name="answer2" value="wrong">C
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-1">
+                        <div id="question3" class="questionGroup">
+                            <p>Cleveland was the birthplace of what superhero?</p>
+                            <input type="radio" name="answer3" value="wrong">Spiderman
+                            <br>
+                            <input type="radio" name="answer3" value="correct">Superman
+                            <br>
+                            <input type="radio" name="answer3" value="wrong">Wonder Woman
+                            <br>
+                            <input type="radio" name="answer3" value="wrong">Batman
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-1">
+                        <div id="question4" class="questionGroup">
+                            <p>The Free Stamp located in Clevaland's Willard Park was created by what artist?</p>
+                            <input type="radio" name="answer4" value="wrong">Banksy
+                            <br>
+                            <input type="radio" name="answer4" value="wrong">Picasso
+                            <br>
+                            <input type="radio" name="answer4" value="correct">Claes Oldenberg
+                            <br>
+                            <input type="radio" name="answer4" value="wrong">Jeff Koons
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-1">
+                        <div id="question5" class="questionGroup">
+                            <p>Cleveland's Playhouse Square is the second largest theater complex in te U.S.</p>
+                            <input type="radio" name="answer5" value="correct">True
+                            <br>
+                            <input type="radio" name="answer5" value="wrong">False
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-1">
+                        <div id="question6" class="questionGroup">
+                            <p>What street in Cleveland was known as "Millionaire's Row" in the late 19th and early 20th century?</p>
+                            <input type="radio" name="answer6" value="wrong">Carnegie Avenue
+                            <br>
+                            <input type="radio" name="answer6" value="wrong">Chester Avenue
+                            <br>
+                            <input type="radio" name="answer6" value="wrong">Detroit Avenue
+                            <br>
+                            <input type="radio" name="answer6" value="correct">Euclid Avenue
                             <br>
                         </div>
                     </div>
@@ -54,7 +109,17 @@
             </form>
             <button id="submit" type="submit">SUBMIT</button>
         </div>
-    </div>
+        <div id="endPage">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-1">
+                    <div class="total">
+                        <p>Correct Answers: <span id="correctScore"></span></p>
+                        <p>Incorrect Answers: <span id="incorrectScore"></span></p>
+                        <p>Unanswered Questions: <span id="unansweredQuestions"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
