@@ -48,24 +48,22 @@ $(document).ready(function() {
                 $("#unansweredQuestions").text(amountUnanswered);
             }
         }
-
-        var count = 5;
-        var counter = setInterval(timer, 1000);
-
-        function timer() {
-            count = count - 1;
-            if (count <= 0) {
-                clearInterval(counter);
-                $("#questionPage").hide();
-                $("#endPage").show();
-            }
-            $("#countDown").text(count);
-        }
         console.log("Correct Responses: " + amountCorrect);
         console.log("Incorrect Responses: " + amountIncorrect);
         console.log("Unanswered Responses: " + amountUnanswered)
     }
+    var currentQuestion = 0;
 
+    $("#nextQuestion").on("click", function() {
+        $("#question" + currentQuestion).hide();
+        currentQuestion++;
+        $("#question" + currentQuestion).slideDown();
+        var element = $("#question" + currentQuestion);
+        if ($("#question" + currentQuestion).hasClass("lastQuestion")) {
+            $("#nextQuestion").hide();
+            $("#submit").show();
+        }
+    });
     $("#submit").on("click", function() {
         answerCheck();
         $("#questionPage").hide();
