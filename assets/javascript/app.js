@@ -3,8 +3,9 @@ $(document).ready(function() {
     $("#startGame").on("click", function() {
         $("#startPage").hide();
         $("#questionPage").show();
+        $(".fireworks").hide();
 
-        var count = 30;
+        var count = 45;
         var counter = setInterval(timer, 1000);
 
         function timer() {
@@ -18,15 +19,14 @@ $(document).ready(function() {
             $("#countDown").text(count);
         }
     });
-
-    function answerCheck() {
         var amountCorrect = 0;
+    function answerCheck() {
         var amountIncorrect = 0;
         var amountUnanswered = 0;
         $("#correctScore").text(amountCorrect);
         $("#incorrectScore").text(amountIncorrect);
         $("#unansweredQuestions").text(amountUnanswered);
-        for (var i = 1; i <= 6; i++) {
+        for (var i = 0; i <= 5; i++) {
             var radios = $("input[name=answer" + i + "]");
             var wasAnswered = false;
 
@@ -52,8 +52,7 @@ $(document).ready(function() {
         console.log("Incorrect Responses: " + amountIncorrect);
         console.log("Unanswered Responses: " + amountUnanswered)
     }
-    var currentQuestion = 0;
-
+        var currentQuestion = 0;
     $("#nextQuestion").on("click", function() {
         $("#question" + currentQuestion).hide();
         currentQuestion++;
@@ -68,6 +67,10 @@ $(document).ready(function() {
         answerCheck();
         $("#questionPage").hide();
         $("#endPage").show();
+        if (amountCorrect >= 4) {
+            $(".fireworks").show();
+        }
+        
     });
 
 
