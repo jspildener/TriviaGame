@@ -22,6 +22,7 @@ $(document).ready(function() {
             $("#countDown").text(count);
         }
     });
+
     var amountCorrect = 0;
 
     function answerCheck() {
@@ -56,7 +57,9 @@ $(document).ready(function() {
         console.log("Incorrect Responses: " + amountIncorrect);
         console.log("Unanswered Responses: " + amountUnanswered)
     }
+
     var currentQuestion = 0;
+
     $("#nextQuestion").on("click", function() {
         $("#question" + currentQuestion).hide();
         currentQuestion++;
